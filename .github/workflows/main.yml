@@ -103,7 +103,7 @@ jobs:
       - name: Push the Docker Image
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-        run: docker push $DOCKER_USER/titanic-fastapi
+        run: docker push ${{ secrets.DOCKER_USER_NAME }}/titanic-fastapi:latest
 
       - name: Logout to Docker hub
         run: docker logout
